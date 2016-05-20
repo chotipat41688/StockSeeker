@@ -83,8 +83,10 @@
 
 
 	$query = "INSERT INTO news VALUES (NULL, '$title', '$subTitle', '$detail', '$target_file', $type)";
-	echo $query;
 	$conn->query($query);
+	echo 'News Added!';
+	header('Refresh: 1; URL=http://stockseeker.busseeker.in.th/index.php');
+
 
 
 
