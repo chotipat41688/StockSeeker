@@ -4,8 +4,8 @@
   if (isset($_SESSION['username'])) { 
       //echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
   } else {
-      echo "Please log in first to see this page.";
       die("Please login first");
+      header('Refresh: 1; URL=http://stockseeker.busseeker.in.th/Login.php');
   }
  ?>
 
