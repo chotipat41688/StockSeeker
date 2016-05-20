@@ -1,12 +1,24 @@
 <?php 
-	
+	header("content-type:text/javascript;charset=utf-8");   
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
+
+	function raw_json_encode($input) {
+	 	return preg_replace_callback( '/\\\\u([0-9a-zA-Z]{4})/',
+			create_function(
+	            '$matches',
+	            'return mb_convert_encoding(pack("H*",$matches[1]),"UTF-8","UTF-16");'
+	        ),
+	  json_encode($input));
+	}
+
+
+
 	$servername = "localhost";
-	$username = "root";
-	$password = "root";
-	$db = "se";
+	$username = "busseekeri_yortz";
+	$password = "8eHWqQ9hy6tYXfOG";
+	$db = "busseekeri_se";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $db);
@@ -31,5 +43,6 @@
             $myArray[] = $row;
     	}
 	}
-	echo json_encode($myArray,JSON_UNESCAPED_UNICODE);
+
+	echo raw_json_encode($myArray);
  ?>

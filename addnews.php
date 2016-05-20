@@ -69,9 +69,9 @@
 
 
 	$servername = "localhost";
-	$username = "root";
-	$password = "root";
-	$db = "se";
+	$username = "busseekeri_yortz";
+	$password = "8eHWqQ9hy6tYXfOG";
+	$db = "busseekeri_se";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $db);

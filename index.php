@@ -10,10 +10,10 @@
     <script type="text/javascript" src="js/carouselScript.js"></script>
     <link href="css/carousel.css" rel="stylesheet" type="text/css">
 
-
+    <?php header('Access-Control-Allow-Origin: *'); ?>
     <script type="text/javascript">
     $(document).ready(function(){
-         $.getJSON("http://localhost:8888/se2/getnews.php",
+         $.getJSON("http://stockseeker.busseeker.in.th/getnews.php",
          function(data) {
             console.log(data);         
           });   
@@ -22,18 +22,18 @@
     $(document).ready(function(){
          $.ajax({ 
              type: "GET",
-             dataType: "jsonp",
+             dataType: "json",
              url: "http://stockseeker.busseeker.in.th/getnews.php",
              success: function(data){        
                 console.log(data);
                 $a = data;
                 $('#invTitle1').html($a[0].title);
                 $('#invSubTitle1').html($a[0].subtitle);
-                $( "#invImgTitle1" ).attr('src', $a[0].img );
+                $( "#invImgTitle1" ).attr('src', '/'+$a[0].image );
 
                 $('#invTitle2').html($a[1].title);
                 $('#invSubTitle2').html($a[1].subtitle);
-                $( "#invImgTitle2" ).attr('src', $a[1].img );
+                $( "#invImgTitle2" ).attr('src', '/'+$a[1].image );
 
                 $('#advTitle1').html($a[2].title);
                 $('#advSubTitle1').html($a[2].subtitle);
