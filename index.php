@@ -76,7 +76,7 @@ session_start();
         </div>
           <?php  
               if (isset($_SESSION['username'])){
-                echo '<div > <p><a href="Addnews.php">Add News(Logged in as Admin)</a></p></div>';
+                echo '<div > <p><a href="insertNews.php">Add News(Logged in as Admin)</a></p></div>';
                 echo '<div > <p><a href="logout.php">Logout</a></p></div>';
 
               }

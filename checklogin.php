@@ -23,7 +23,7 @@
   	if ($result->num_rows) { 
         $_SESSION['username'] = $username;
         echo 'Logged in Please wait for redirect!';
-        header('Refresh: 1; URL=http://stockseeker.busseeker.in.th/Addnews.php');
+        header('Refresh: 1; URL=http://stockseeker.busseeker.in.th/insertNews.php');
     } 
    else
    	{
