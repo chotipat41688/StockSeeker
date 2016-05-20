@@ -1,0 +1,13 @@
+I WANT TO ENSURE THAT CAN LOGOUT AT ADD NEWS PAGE
+
+I am on page '/'
+I am on page '/'
+I click 'login'
+I fill field 'username'," 'stock'
+I fill field 'password'," 'seeker'
+I click 'Login'
+I see 'Logged in Please wait for redirect!'
+I wait "3"
+I see 'เพิ่มข่าว'
+I click 'Logout'
+I see 'login'

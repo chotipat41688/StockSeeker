@@ -1,0 +1,29 @@
+I WANT TO ENSURE THAT ADMIN CAN ADD NEWS
+
+I am on page '/'
+I click 'login'
+I wait "3"
+I see current url equals '/Login.php'
+I fill field 'username'," 'stock'
+I fill field 'password'," 'seeker'
+I click 'input[type=submit]'
+I wait "3"
+I fill field 'title','หัวข้อข่าว001'
+I fill field 'subTitle','รายละเอียดย่อ001'
+I fill field 'detail','รายละเอียดเต็ม'
+I select option '#topic','ข่าวการลงทุน'
+I click 'input[type=submit]'
+I wait "3"
+I see current url equals '/index.php'
+I see 'หัวข้อข่าว001'
+I see 'รายละเอียดย่อ001'
+I wait "3"
+I fill field 'name_en'," 'eiei'
+I fill field 'name_th'," 'eiei5'
+I select option 'semester'," '1/2558'
+I fill field 'section'," '1'
+I click '#btn-modal-add-class'
+I wait "2"
+I don't see 'there was a problem creating your class.'
+I don't see element './/div[@class="form-group has-danger"]'
+

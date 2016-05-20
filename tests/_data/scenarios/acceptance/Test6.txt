@@ -1,0 +1,14 @@
+I WANT TO ENSURE THAT CAN LOGOUT AT HOMEPAGE
+
+I am on page '/'
+I am on page '/'
+I click 'login'
+I fill field 'username'," 'stock'
+I fill field 'password'," 'seeker'
+I click 'Login'
+I see 'Logged in Please wait for redirect!'
+I wait "3"
+I click 'Home'
+I see('add news "Logged in as Admin)'
+I click 'Logout'
+I see 'login'

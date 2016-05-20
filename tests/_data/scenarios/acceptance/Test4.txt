@@ -1,0 +1,5 @@
+I WANT TO ENSURE THAT ONLY ADMIN CANS ADD NEWS
+
+I am on page '/insertNews.php'
+I am on page '/insertNews.php'
+I see 'Please Login first.'
