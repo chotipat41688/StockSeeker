@@ -5,14 +5,8 @@
 # If you need both WebDriver and PHPBrowser tests - create a separate suite.
 
 class_name: AcceptanceTester
-#modules:
-#    enabled:
-#        - PhpBrowser:
-#            url: http://modpd167.lib.kmutt.ac.th:51902/
-#        - \Helper\Acceptance
 modules:
       enabled:
           - WebDriver:
-             #url: 'http://modpd167.lib.kmutt.ac.th:51902/'
              url: 'http://stockseeker.busseeker.in.th/'
              browser: chrome
