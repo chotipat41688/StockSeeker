@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>StockSeeker</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/carouselScript.js"></script>
+<link href="css/carousel.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+<div class="wrapper">
+  <div class="top-strip">
+    <div class="logo">
+      <!--<h1>sitename</h1>-->
+      <!--<h2>lorem ipsum</h2>-->
+      <img src="images/logofinal.png"  alt="Slide 1"/>
+    </div>
+    <div class="clearing"></div>
+     <!--Navigator bar-->
+  <div> 
+    <nav style="text-align:center">
+      <ul>
+        <li><a href="#">Home</a></li>
+          <li><a href="#">Stock Info</a></li>
+          <li><a href="#">Market</a></li>
+         <li>
+          <a href="#">Simulator</a>
+            <ul class="above">
+                <li><a href="#">Themes</a></li>
+                <li><a href="#">Plugins</a></li>
+                <li><a href="#">Tutorials</a></li>
+            </ul>
+         </li>
+        <li><a href="#">Tutorial</a>
+         <ul class="above">
+                <li><a href="#">Themes</a></li>
+                <li><a href="#">Plugins</a></li>
+                <li><a href="#">Tutorials</a></li>
+            </ul>
+        </li> 
+    </ul>
+  </nav>
+</div>
+
+ <!--add news-->
+<div>
+    <center><h3>เพิ่มข่าว</h3></center>
+  <div>
+
+
+ <div class ="Size">
+  <form action="#.php" class ="Addnews">
+    <label for="title">ชื่อหัวข้อข่าว</label>
+    <input type="text" id="title" name="title">
+
+    <label for="story1">รายละเอียดย่อ</label>
+    <input type="text" id="story1" name="story1">
+
+    <label for="story2">รายละเอียดเต็ม</label>
+    <input type="text" id="story2" name="story2">
+
+    <label for="topic">หัวข้อข่าว</label>
+    <select id="topic" name="topic">
+      <option value="topic1">ข่าวการลงทุน</option>
+      <option value="topic2">ข่าวการประชาสัมพันธ์</option>
+      <option value="topic3">เนื้อหา</option>
+    </select>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+
+ <!--- footer wrapper div end -->
+ <div class="copyright">
+ <p>Copyright (c) stockseeker. All rights reserved. <a href="#"> www.stockseeker.com</a></p>
+ </div>
+</div>
+</div>
+<!--- wrapper div end -->
+</body>
+</html>
