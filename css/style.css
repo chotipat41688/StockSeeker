@@ -5,6 +5,7 @@ ul li{ list-style:none; outline:none;}
 img{ border:none; }
 img{ border:none;}
 h1{ font-family:'Open Sans', sans-serif; color:#ffffff; font-size:25px;}
+h3{ font-family:'Open Sans', sans-serif; color:#5D93AD; font-size:35px;}
 a { text-decoration:none; color:#e18868;}
 a:hover {color:#fff;}
 /*-------------------------------------------------
@@ -248,3 +249,47 @@ FOOTER CLASSS
 .foooter-inpage .copyright p{width:960px; text-align:center; height:60px; line-height:60px; margin:0 auto; padding-bottom:10px; color:#5D93AD;}
 .foooter-inpage .copyright a{color:#fff;}
 .foooter-inpage .copyright a:hover{color:#5D93AD;}
+
+/*-------------------------------------------
+Add news
+-------------------------------------------*/
+input[type=text], 
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #5D93AD;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #000000;
+}
+
+.TextBox{
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.Size {
+    margin-top:50px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 50%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 40px;
+}

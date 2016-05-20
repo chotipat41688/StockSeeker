@@ -48,32 +48,33 @@
 </div>
 
  <!--add news-->
-<div>
-    <center><h3>เพิ่มข่าว</h3></center>
-  <div>
+
 
 
  <div class ="Size">
+  <center><h3>เพิ่มข่าว</h3></center>
   <form action="addnews.php" class ="Addnews" method="post" enctype="multipart/form-data">
     <label for="title">ชื่อหัวข้อข่าว</label>
     <input type="text" id="title" name="title">
 
-    <label for="title">รูปภาพ</label>
-    <input type="file" name="image" id="image">
-    ​<br>
     <label for="subTitle">รายละเอียดย่อ</label>
     <input type="text" id="subTitle" name="subTitle">
 
     <label for="detail">รายละเอียดเต็ม</label>
-    <input type="text" id="detail" name="detail">
-
+    <textarea class="TextBox" rows="10" style="width:500px" required id="detail" name="detail">
+    </textarea>
+<br><br>
     <label for="topic">หัวข้อข่าว</label>
     <select id="topic" name="type">
       <option value="1">ข่าวการลงทุน</option>
       <option value="2">ข่าวการประชาสัมพันธ์</option>
       <option value="3">เนื้อหา</option>
     </select>
-    
+<br><br><br>
+        <label for="title">รูปภาพ</label>
+    <input type="file" name="image" id="image">
+    ​<br>
+    <br>
     <input type="submit" value="Submit">
   </form>
 </div>
