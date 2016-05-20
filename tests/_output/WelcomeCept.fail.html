@@ -1,0 +1,4398 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title></title>
+	<link href="http://modpd167.lib.kmutt.ac.th:51902/css/all.css" rel="stylesheet" />
+	<link href="http://modpd167.lib.kmutt.ac.th:51902/css/app.css" rel="stylesheet" />
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<nav class="navbar" role="navigation">
+				<a class="navbar-brand logo" href="http://modpd167.lib.kmutt.ac.th:51902"><img src="http://modpd167.lib.kmutt.ac.th:51902/images/logo.png" /></a>
+				<ul class="nav navbar-nav page-menu">
+					<li class="nav-item">
+						<a class="nav-link header-link" href="#">Home </a>
+					</li>
+					<li class="nav-item  active ">
+						<a class="nav-link header-link" href="#">Course<span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item ">
+						<a class="nav-link header-link" href="#">Group</a>
+					</li>
+					<li class="nav-item ">
+						<a class="nav-link header-link" href="#">Resource</a>
+					</li>  -->
+				</ul>
+				<ul class="nav navbar-nav pull-xs-right">
+					<li class="user-menu">
+						<div class="btn-group pull-xs-right">
+							<button class="btn header-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Somchai <span class="icon icon-dropdown"></span>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+								<!-- <a class="dropdown-item" href="#">Menu 1</a>
+								<a class="dropdown-item" href="#">Menu 2</a>
+								<a class="dropdown-item delete" href="#">Delete</a>
+								<div class="dropdown-divider"></div> -->
+								<a class="dropdown-item t-btn-logout" href="http://modpd167.lib.kmutt.ac.th:51902/logout">Logout</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</section>
+	<div id="page_content" class="page-container container" style="min-height: 7950px;">
+		<div class="page-content">
+			
+<div class="class-list-view">
+
+<div id="modal-add-class" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-add-class" aria-hidden="true">
+    <form id="form-modal-add-class" autocomplete="off" action="class" method="post">
+        <input type="hidden" name="_token" value="LgnkkCKkhjcZ20m4Ju2drL6VUYfQVgUfz8OFdJjf" />
+        <input type="hidden" name="class-id" />
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    <a class="close icon-close" data-dismiss="modal" aria-label="Close"></a>
+                    <span class="modal-title h4" id="gridModalLabel">Create Class</span>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group text-error form-error hidden-xs-up">
+                                There was a problem creating your class.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="h4">Class Code</label>
+                                <input type="text" class="form-control focus_filed" name="code" placeholder="e.g. LNG 101" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="h4">Class Name</label>
+                                <input type="text" class="form-control" name="name_th" placeholder="Thai" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name_en" placeholder="English" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row hidden-xs-up">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="h4">Class Curriculum</label>
+                                <select class="form-control" name="curriculum">
+                                    <option value="1">Faculty of Science</option>
+                                    <option value="2">Faculty of Science</option>
+                                    <option value="3">Faculty of Engineering</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="h4">Section</label>
+                                <input type="text" class="form-control" name="section" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="h4">Semester</label>
+                                <select class="form-control" name="semester">
+                                    <option value="1" selected="">1/2558</option>
+                                    <option value="2">2/2558</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="btn-modal-add-class" class="btn btn-success pull-xs-left">Create Class</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="modal-edit-class" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-edit-class" aria-hidden="true">
+    <form id="form-modal-edit-class" autocomplete="off" action="class" method="post">
+        <input type="hidden" name="_token" value="LgnkkCKkhjcZ20m4Ju2drL6VUYfQVgUfz8OFdJjf" />
+        <input type="hidden" name="class-id" />
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    <a class="close icon-close" data-dismiss="modal" aria-label="Close"></a>
+                    <span class="modal-title h4" id="gridModalLabel">Edit Class</span>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group text-error form-error hidden-xs-up">
+                                There was a problem creating your class.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="h4">Class Code</label>
+                                <input type="text" class="form-control focus_filed" name="code" placeholder="e.g. LNG 101" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="h4">Class Name</label>
+                                <input type="text" class="form-control" name="name_th" placeholder="Thai" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name_en" placeholder="English" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row hidden-xs-up">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="h4">Class Curriculum</label>
+                                <select class="form-control" name="curriculum">
+                                    <option value="1">Faculty of Science</option>
+                                    <option value="2">Faculty of Science</option>
+                                    <option value="3">Faculty of Engineering</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="h4">Section</label>
+                                <input type="text" class="form-control" name="section" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="h4">Semester</label>
+                                <select class="form-control" name="semester">
+                                    <option value="1" selected="">1/2558</option>
+                                    <option value="2">2/2558</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="btn-modal-edit-class" class="btn btn-success pull-xs-left">Save Class</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+	<div class="row tab-container">
+		<ul class="nav nav-tabs">
+			<li class="nav-item active">
+				<a class="nav-link" href="#my-class-tab-pane" id="my-class-tab">My Classes</a>
+			</li>
+		</ul>
+	</div>
+	<div class="row tab-content" style="min-height: 7906px;">
+		<div class="col-md-12">
+			<div class="tab-pane active" id="my-class-tab-pane" role="tabpanel">
+				<div class="col-md-8 h3 tab-pane-title">My Classes</div>
+				<div class="col-md-4">
+					<div class="row">
+						<div class="bd-example bd-example-padded-bottom pull-xs-right">
+														<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-add-class">
+							Create Class
+							</button>
+							
+							</div>
+					</div>
+				</div>
+
+				<section class="card-container">
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-4" href="http://modpd167.lib.kmutt.ac.th:51902/class/4/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/4">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/4">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">EIE I101</p>
+			<p name="name_ln" class="card-class-name h5">
+			+!@#$$%
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-15" href="http://modpd167.lib.kmutt.ac.th:51902/class/15/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/15">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/15">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">YY  3464</p>
+			<p name="name_ln" class="card-class-name h5">
+			Yanyong
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					69
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-66" href="http://modpd167.lib.kmutt.ac.th:51902/class/66/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/66">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/66">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 100</p>
+			<p name="name_ln" class="card-class-name h5">
+			C Programing
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					31
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-71" href="http://modpd167.lib.kmutt.ac.th:51902/class/71/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/71">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/71">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Personality
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-84" href="http://modpd167.lib.kmutt.ac.th:51902/class/84/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/84">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/84">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">GEN 411</p>
+			<p name="name_ln" class="card-class-name h5">
+			Personality
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-85" href="http://modpd167.lib.kmutt.ac.th:51902/class/85/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/85">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/85">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">GEN 411</p>
+			<p name="name_ln" class="card-class-name h5">
+			Personality
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-86" href="http://modpd167.lib.kmutt.ac.th:51902/class/86/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/86">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/86">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">GEN 411</p>
+			<p name="name_ln" class="card-class-name h5">
+			Personality
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-87" href="http://modpd167.lib.kmutt.ac.th:51902/class/87/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/87">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/87">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">GEN 411</p>
+			<p name="name_ln" class="card-class-name h5">
+			Personality
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-88" href="http://modpd167.lib.kmutt.ac.th:51902/class/88/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/88">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/88">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">GEN 411</p>
+			<p name="name_ln" class="card-class-name h5">
+			Personality
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-91" href="http://modpd167.lib.kmutt.ac.th:51902/class/91/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/91">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/91">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">GEN 411</p>
+			<p name="name_ln" class="card-class-name h5">
+			Personality
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-92" href="http://modpd167.lib.kmutt.ac.th:51902/class/92/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/92">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/92">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 100</p>
+			<p name="name_ln" class="card-class-name h5">
+			A
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-95" href="http://modpd167.lib.kmutt.ac.th:51902/class/95/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/95">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/95">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 211</p>
+			<p name="name_ln" class="card-class-name h5">
+			Eng
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-102" href="http://modpd167.lib.kmutt.ac.th:51902/class/102/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/102">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/102">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			Begin Again
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					6
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-103" href="http://modpd167.lib.kmutt.ac.th:51902/class/103/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/103">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/103">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">GEN 351</p>
+			<p name="name_ln" class="card-class-name h5">
+			เจน
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-106" href="http://modpd167.lib.kmutt.ac.th:51902/class/106/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/106">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/106">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-107" href="http://modpd167.lib.kmutt.ac.th:51902/class/107/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/107">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/107">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-108" href="http://modpd167.lib.kmutt.ac.th:51902/class/108/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/108">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/108">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-109" href="http://modpd167.lib.kmutt.ac.th:51902/class/109/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/109">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/109">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-110" href="http://modpd167.lib.kmutt.ac.th:51902/class/110/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/110">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/110">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-111" href="http://modpd167.lib.kmutt.ac.th:51902/class/111/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/111">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/111">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-112" href="http://modpd167.lib.kmutt.ac.th:51902/class/112/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/112">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/112">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-113" href="http://modpd167.lib.kmutt.ac.th:51902/class/113/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/113">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/113">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 103</p>
+			<p name="name_ln" class="card-class-name h5">
+			ANT
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-114" href="http://modpd167.lib.kmutt.ac.th:51902/class/114/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/114">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/114">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-115" href="http://modpd167.lib.kmutt.ac.th:51902/class/115/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/115">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/115">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-116" href="http://modpd167.lib.kmutt.ac.th:51902/class/116/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/116">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/116">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ANT 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			ไทย
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1150
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-117" href="http://modpd167.lib.kmutt.ac.th:51902/class/117/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/117">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/117">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 111</p>
+			<p name="name_ln" class="card-class-name h5">
+			computer exploration
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-118" href="http://modpd167.lib.kmutt.ac.th:51902/class/118/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/118">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/118">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 111</p>
+			<p name="name_ln" class="card-class-name h5">
+			computer exploration
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-119" href="http://modpd167.lib.kmutt.ac.th:51902/class/119/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/119">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/119">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 111</p>
+			<p name="name_ln" class="card-class-name h5">
+			computer exploration
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-120" href="http://modpd167.lib.kmutt.ac.th:51902/class/120/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/120">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/120">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 111</p>
+			<p name="name_ln" class="card-class-name h5">
+			computer exploration
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-121" href="http://modpd167.lib.kmutt.ac.th:51902/class/121/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/121">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/121">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 111</p>
+			<p name="name_ln" class="card-class-name h5">
+			computer exploration
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-122" href="http://modpd167.lib.kmutt.ac.th:51902/class/122/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/122">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/122">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">PSM 3420</p>
+			<p name="name_ln" class="card-class-name h5">
+			Personality Management
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					11
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-125" href="http://modpd167.lib.kmutt.ac.th:51902/class/125/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/125">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/125">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-126" href="http://modpd167.lib.kmutt.ac.th:51902/class/126/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/126">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/126">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-127" href="http://modpd167.lib.kmutt.ac.th:51902/class/127/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/127">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/127">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-128" href="http://modpd167.lib.kmutt.ac.th:51902/class/128/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/128">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/128">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-130" href="http://modpd167.lib.kmutt.ac.th:51902/class/130/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/130">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/130">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-131" href="http://modpd167.lib.kmutt.ac.th:51902/class/131/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/131">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/131">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-132" href="http://modpd167.lib.kmutt.ac.th:51902/class/132/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/132">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/132">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-134" href="http://modpd167.lib.kmutt.ac.th:51902/class/134/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/134">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/134">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-135" href="http://modpd167.lib.kmutt.ac.th:51902/class/135/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/135">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/135">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-136" href="http://modpd167.lib.kmutt.ac.th:51902/class/136/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/136">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/136">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-137" href="http://modpd167.lib.kmutt.ac.th:51902/class/137/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/137">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/137">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-138" href="http://modpd167.lib.kmutt.ac.th:51902/class/138/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/138">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/138">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-139" href="http://modpd167.lib.kmutt.ac.th:51902/class/139/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/139">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/139">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-140" href="http://modpd167.lib.kmutt.ac.th:51902/class/140/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/140">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/140">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-141" href="http://modpd167.lib.kmutt.ac.th:51902/class/141/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/141">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/141">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-142" href="http://modpd167.lib.kmutt.ac.th:51902/class/142/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/142">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/142">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-143" href="http://modpd167.lib.kmutt.ac.th:51902/class/143/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/143">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/143">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-144" href="http://modpd167.lib.kmutt.ac.th:51902/class/144/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/144">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/144">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-145" href="http://modpd167.lib.kmutt.ac.th:51902/class/145/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/145">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/145">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-146" href="http://modpd167.lib.kmutt.ac.th:51902/class/146/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/146">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/146">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-148" href="http://modpd167.lib.kmutt.ac.th:51902/class/148/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/148">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/148">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 666</p>
+			<p name="name_ln" class="card-class-name h5">
+			classNameEn
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					2
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-149" href="http://modpd167.lib.kmutt.ac.th:51902/class/149/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/149">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/149">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 666</p>
+			<p name="name_ln" class="card-class-name h5">
+			classNameEn
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					2
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-194" href="http://modpd167.lib.kmutt.ac.th:51902/class/194/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/194">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/194">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 999</p>
+			<p name="name_ln" class="card-class-name h5">
+			Testing
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-213" href="http://modpd167.lib.kmutt.ac.th:51902/class/213/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/213">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/213">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">PRD 216</p>
+			<p name="name_ln" class="card-class-name h5">
+			Minions Design
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					69
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-214" href="http://modpd167.lib.kmutt.ac.th:51902/class/214/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/214">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/214">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 401</p>
+			<p name="name_ln" class="card-class-name h5">
+			Java
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1101
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-215" href="http://modpd167.lib.kmutt.ac.th:51902/class/215/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/215">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/215">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 401</p>
+			<p name="name_ln" class="card-class-name h5">
+			Java
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1101
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-216" href="http://modpd167.lib.kmutt.ac.th:51902/class/216/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/216">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/216">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">LNG 241</p>
+			<p name="name_ln" class="card-class-name h5">
+			writing
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-217" href="http://modpd167.lib.kmutt.ac.th:51902/class/217/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/217">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/217">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 401</p>
+			<p name="name_ln" class="card-class-name h5">
+			Java
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1101
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-218" href="http://modpd167.lib.kmutt.ac.th:51902/class/218/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/218">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/218">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ABA 010</p>
+			<p name="name_ln" class="card-class-name h5">
+			aaa
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-219" href="http://modpd167.lib.kmutt.ac.th:51902/class/219/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/219">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/219">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 401</p>
+			<p name="name_ln" class="card-class-name h5">
+			Java
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1101
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-220" href="http://modpd167.lib.kmutt.ac.th:51902/class/220/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/220">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/220">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 401</p>
+			<p name="name_ln" class="card-class-name h5">
+			Java
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1101
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-222" href="http://modpd167.lib.kmutt.ac.th:51902/class/222/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/222">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/222">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Software Engineering ^^
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					31
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-224" href="http://modpd167.lib.kmutt.ac.th:51902/class/224/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/224">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/224">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Software Engineering ^^
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					31
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-225" href="http://modpd167.lib.kmutt.ac.th:51902/class/225/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/225">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/225">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Software Engineering ^^
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					31
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-226" href="http://modpd167.lib.kmutt.ac.th:51902/class/226/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/226">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/226">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333</p>
+			<p name="name_ln" class="card-class-name h5">
+			Software Engineering ^^
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					31
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-229" href="http://modpd167.lib.kmutt.ac.th:51902/class/229/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/229">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/229">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">TES 001</p>
+			<p name="name_ln" class="card-class-name h5">
+			TEST ENG
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-230" href="http://modpd167.lib.kmutt.ac.th:51902/class/230/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/230">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/230">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">GGG 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			test
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					5
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-231" href="http://modpd167.lib.kmutt.ac.th:51902/class/231/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/231">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/231">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 721</p>
+			<p name="name_ln" class="card-class-name h5">
+			Facebook &amp; Social Network
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					34
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-233" href="http://modpd167.lib.kmutt.ac.th:51902/class/233/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/233">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/233">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 555</p>
+			<p name="name_ln" class="card-class-name h5">
+			module test
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					2
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-235" href="http://modpd167.lib.kmutt.ac.th:51902/class/235/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/235">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/235">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">TTT 000</p>
+			<p name="name_ln" class="card-class-name h5">
+			test
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					2
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-239" href="http://modpd167.lib.kmutt.ac.th:51902/class/239/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/239">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/239">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">YUM 101</p>
+			<p name="name_ln" class="card-class-name h5">
+			YUM
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					16
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-248" href="http://modpd167.lib.kmutt.ac.th:51902/class/248/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/248">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/248">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333(AB)</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-249" href="http://modpd167.lib.kmutt.ac.th:51902/class/249/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/249">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/249">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333(AB)</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-251" href="http://modpd167.lib.kmutt.ac.th:51902/class/251/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/251">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/251">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 333(AB)</p>
+			<p name="name_ln" class="card-class-name h5">
+			Soft En
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					300
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-252" href="http://modpd167.lib.kmutt.ac.th:51902/class/252/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/252">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/252">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">ABC 123</p>
+			<p name="name_ln" class="card-class-name h5">
+			dfsdfs
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					2
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-254" href="http://modpd167.lib.kmutt.ac.th:51902/class/254/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/254">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/254">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 444</p>
+			<p name="name_ln" class="card-class-name h5">
+			eiei
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-255" href="http://modpd167.lib.kmutt.ac.th:51902/class/255/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/255">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/255">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 444</p>
+			<p name="name_ln" class="card-class-name h5">
+			Python Programming
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-256" href="http://modpd167.lib.kmutt.ac.th:51902/class/256/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/256">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/256">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 555</p>
+			<p name="name_ln" class="card-class-name h5">
+			Python Programming
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-257" href="http://modpd167.lib.kmutt.ac.th:51902/class/257/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/257">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/257">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 555</p>
+			<p name="name_ln" class="card-class-name h5">
+			Python Programming
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					1
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-258" href="http://modpd167.lib.kmutt.ac.th:51902/class/258/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/258">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/258">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">LOL 2016</p>
+			<p name="name_ln" class="card-class-name h5">
+			League of Legends
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					99
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-278" href="http://modpd167.lib.kmutt.ac.th:51902/class/278/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/278">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/278">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 141</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-279" href="http://modpd167.lib.kmutt.ac.th:51902/class/279/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/279">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/279">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 141</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-280" href="http://modpd167.lib.kmutt.ac.th:51902/class/280/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/280">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/280">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 141</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-281" href="http://modpd167.lib.kmutt.ac.th:51902/class/281/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/281">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/281">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 141</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-282" href="http://modpd167.lib.kmutt.ac.th:51902/class/282/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/282">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/282">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 141</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-283" href="http://modpd167.lib.kmutt.ac.th:51902/class/283/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/283">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/283">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 141</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-284" href="http://modpd167.lib.kmutt.ac.th:51902/class/284/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/284">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/284">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 141</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-285" href="http://modpd167.lib.kmutt.ac.th:51902/class/285/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/285">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/285">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 141</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-286" href="http://modpd167.lib.kmutt.ac.th:51902/class/286/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/286">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/286">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 888</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-287" href="http://modpd167.lib.kmutt.ac.th:51902/class/287/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/287">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/287">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 888</p>
+			<p name="name_ln" class="card-class-name h5">
+			JAVA
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					14
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					1/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+																	<div class="col-xs-4 col-xl-3">
+	<a class="class-card card card-inverse" name="card-294" href="http://modpd167.lib.kmutt.ac.th:51902/class/294/member">
+		<img class="card-img" src="http://modpd167.lib.kmutt.ac.th:51902/images/class_theme/background/Cover-1.png" alt="Card image" />
+		<div class="card-img-overlay">
+
+						<ul class="nav navbar-nav pull-xs-right">
+				<li class="class-menu">
+					<div class="btn-group pull-xs-right">
+						<div href="" class="icon icon-setting-2 fix-oncard-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+						<div class="dropdown-menu dropdown-menu-right pull-xs-right">
+
+							<div class="dropdown-item btn-edit t-btn-classedit fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/get_info/294">Edit</div>
+							<!-- <div class="dropdown-item fix-oncard-btn" href="#">Import Student</div>
+							<div class="dropdown-item fix-oncard-btn" href="#">Save to My Resource</div> -->
+							<div class="dropdown-item btn-delete delete t-btn-classdelete fix-oncard-btn" href="http://modpd167.lib.kmutt.ac.th:51902/class/del/294">Delete</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p name="code" class="card-title h2">CPE 888</p>
+			<p name="name_ln" class="card-class-name h5">
+			Computer Software
+			</p>
+		</div>
+		<div class="card-block">
+			<span class="text-md-left pull-xs-left">
+				<p class="h6">
+					Section
+				</p>
+				<p name="section" class="h5">
+					8
+				</p>
+			</span>
+			<span class="text-md-right">
+				<p class="h6">
+					Semester
+				</p>
+				<p name="semester" class="h5">
+					2/2558
+				</p>
+			</span>
+		</div>
+	</a>
+</div>
+									</section>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+	<section class="page-footer">
+	<div class="container">
+		<div class="col-xs-6">
+			© 2016 KMUTT Learning Environment All rights reserved.
+		</div>
+		<div class="col-xs-6 text-xs-right">
+			<a class=" active " href="http://modpd167.lib.kmutt.ac.th:51902/locale/en">EN</a>  | 
+			<a class="" href="http://modpd167.lib.kmutt.ac.th:51902/locale/th">TH</a>
+		</div>
+	</div>
+</section>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://modpd167.lib.kmutt.ac.th:51902/js/all.js"></script>
+        <script src="http://modpd167.lib.kmutt.ac.th:51902/js/app.js"></script>
+    <script type="text/javascript">
+        Lang.setLocale('en');    </script>
+
+
+</body></html>
