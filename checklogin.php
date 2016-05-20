@@ -6,6 +6,7 @@
 	$username = "busseekeri_yortz";
 	$password = "8eHWqQ9hy6tYXfOG";
 	$db = "busseekeri_se";
+	session_start();
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $db);
@@ -23,7 +24,7 @@
         $_SESSION['valid'] = true;
         $_SESSION['timeout'] = time();
         $_SESSION['username'] = $username;
-        echo $_SESSION['valid'];
+        echo $_SESSION['username'];
     } 
    else
    	{
