@@ -21,13 +21,15 @@
 	$result = $conn->query("SELECT * FROM user WHERE username='".$username."' AND password='".$password."'");
 
   	if ($result->num_rows) { 
-        $_SESSION['valid'] = true;
-        $_SESSION['timeout'] = time();
         $_SESSION['username'] = $username;
-        echo $_SESSION['username'];
+        echo 'Logged in Please wait for redirect!';
+        header('Refresh: 1; URL=http://stockseeker.busseeker.in.th/Addnews.php');
     } 
    else
    	{
   		// do what u like here if not activated
+  		echo 'Wrong User!';
+        header('Refresh: 1; URL=http://stockseeker.busseeker.in.th/Login.php');
+
     }
 ?>

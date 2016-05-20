@@ -1,3 +1,7 @@
+  <?php
+// Start the session
+session_start();
+?>
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -70,9 +74,19 @@
           <!--<h2>lorem ipsum</h2>-->
           <img src="images/logofinal.png"/>
         </div>
-        <div class="login">
-          <p><a href="Login.html">login</a></p>
-        </div>
+          <?php  
+              if (isset($_SESSION['username'])){
+                echo '<div > <p><a href="Addnews.php">Add News(Logged in as Admin)</a></p></div>';
+                echo '<div > <p><a href="logout.php">Logout</a></p></div>';
+
+              }
+              else
+              {
+          echo '<div class="login">
+            <p><a href="Login.php">login</a></p>
+          </div>';
+              }
+          ?>
         <div class="clearing"></div>
         <!--Navigator bar-->
         <div> 
