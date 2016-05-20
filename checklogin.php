@@ -6,6 +6,7 @@
 	$username = "busseekeri_yortz";
 	$password = "8eHWqQ9hy6tYXfOG";
 	$db = "busseekeri_se";
+	session_start();
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $db);
@@ -17,10 +18,13 @@
 	$username = $_POST['username'];
 	$password = $_POST['password']; 
 
-	$result = $conn->query("SELECT * FROM account WHERE username='".$username."' AND password='".$username."'");
+	$result = $conn->query("SELECT * FROM user WHERE username='".$username."' AND password='".$password."'");
 
-  	if ($result->num_rows) {
-		echo "you are activated !!";
+  	if ($result->num_rows) { 
+        $_SESSION['valid'] = true;
+        $_SESSION['timeout'] = time();
+        $_SESSION['username'] = $username;
+        echo $_SESSION['username'];
     } 
    else
    	{
