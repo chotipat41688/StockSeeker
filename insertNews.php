@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  echo $_SESSION['username'];
+  //echo $_SESSION['username'];
   if (isset($_SESSION['username'])) { 
       //echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
   } else {
@@ -30,6 +30,19 @@
       <!--<h2>lorem ipsum</h2>-->
       <img src="images/logofinal.png"  alt="Slide 1"/>
     </div>
+          <?php  
+              if (isset($_SESSION['username'])){
+                //echo '<div > <p><a href="insertNews.php">Add News(Logged in as Admin)</a></p></div>';
+                echo '<div> <p><a href="logout.php">Logout</a></p></div>';
+
+              }
+              else
+              {
+          echo '<div class="login">
+            <p><a href="Login.php">login</a></p>
+          </div>';
+              }
+          ?>
     <div class="clearing"></div>
      <!--Navigator bar-->
   <div> 
