@@ -71,7 +71,7 @@
           <img src="images/logofinal.png"/>
         </div>
         <div class="login">
-          <p><a href="login.html">login</a></p>
+          <p><a href="Login.html">login</a></p>
         </div>
         <div class="clearing"></div>
         <!--Navigator bar-->
@@ -129,7 +129,7 @@
         </div>
         <div class="left marRight30">
           <div class="imgbg">
-            <div class="img"><img id="invImgTitle1" src="images/img3.jpg" /></div>
+            <div class="img"><img height="100" width="100" id="invImgTitle1" src="images/img3.jpg"  /></div>
           </div>
         </div>
         <div class="right">
@@ -142,7 +142,7 @@
         	
           <div class="left marRight30">
             <div class="imgbg">
-              <div class="img"><img id="invImgTitle2" src="images/img4.jpg" /></div>
+              <div class="img"><img id="invImgTitle2" src="images/img4.jpg" height="100" width="100" /></div>
             </div>
           </div>
           <div class="right">
